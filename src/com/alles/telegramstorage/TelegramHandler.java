@@ -144,7 +144,7 @@ public class TelegramHandler {
                     i = i + 1;
                 }
                 latch.await();
-                FileUtils.deleteDirectory(new File("./TMP_"+file.getName()));
+                FileUtils.deleteDirectory(new File("./TMP-"+file.getName()));
                 StringBuilder splitID = OrderUploadedData(syncList);
                 System.out.println(splitID);
                 return splitID.toString();

@@ -53,7 +53,7 @@ public class TelegramHandler {
                 File destination = new File(TempDir+fileidList.get(fileidList.size()-1)+"."+(i+1));
                 Downloaded_Files.add(destination);
                 while (i >= fileidList.size() - ((int) latch.getCount()) + 4){
-                    // Wait for threads
+                    Thread.sleep(200);
                 }
                 ThreadDownload downloader = new ThreadDownload(this, fileidList.get(i), destination, latch);
                 downloader.start();
